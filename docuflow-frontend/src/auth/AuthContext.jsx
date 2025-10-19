@@ -12,9 +12,9 @@ export const AuthProvider = ({ children }) => {
     const authHeader = "Basic " + btoa(`${username}:${password}`);
     sessionStorage.setItem("authHeader", authHeader);
     try {
-      // test with any accessible endpoint
-      axios.get("http://localhost:8080/api/documents");
-      setUser({ username, role: authheader.getrole() }); 
+      
+   const auth=axios.get("http://localhost:8080/api/auth/login");
+      setUser({auth.username(), role: auth.getrole() }); 
       return true;
     } catch {
       sessionStorage.removeItem("authHeader");
