@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     try {
       // test with any accessible endpoint
       axios.get("http://localhost:8080/api/documents");
-      setUser({ username, role: "SUBMITTER" }); // you’ll later fetch actual role from backend if needed
+      setUser({ username, role: authheader.getrole() }); 
       return true;
     } catch {
       sessionStorage.removeItem("authHeader");
