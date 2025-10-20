@@ -1,16 +1,57 @@
-# React + Vite
+<h1 align="center">📄 DocuFlow</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <em>"A simple act of caring creates an endless ripple."</em>  
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <b>DocuFlow</b> is an intelligent Document Workflow Management System that streamlines document submission, review, and approval.  
+  Designed for teams who care about collaboration, transparency, and quality.  
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JWT-SecureAuth-red?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Made%20with❤️by-Prashant_Bhusnar-blue?style=for-the-badge"/>
+</p>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🌟 Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**DocuFlow** brings structure and efficiency to document management.  
+It allows users to **upload**, **review**, and **approve** documents through a secure, role-based workflow — ensuring every submission gets the attention it deserves.
+
+✅ **Roles:** Submitter, Reviewer, Approver  
+✅ **Core Features:** Upload → Review → Approve/Reject → Final Approval  
+✅ **Goal:** Simplify document communication and tracking across teams.
+
+---
+
+## 🧠 Core Features
+
+| Role | Description |
+|------|--------------|
+| **Submitter** | Uploads documents with title, type, and description |
+| **Reviewer** | Reviews, comments, and marks as approved/rejected |
+| **Approver** | Gives final approval for organization-level acceptance |
+| **System** | Tracks progress, notifies users, and maintains logs |
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    A[Submitter] -->|Uploads Document| B[Backend - Spring Boot]
+    B --> C[(Database - MySQL)]
+    B --> D[Reviewer Dashboard - React]
+    D -->|Review & Comment| B
+    B --> E[Approver Dashboard - React]
+    E -->|Approve/Reject| B
+    B --> F[Document Status Updated 🔁]
